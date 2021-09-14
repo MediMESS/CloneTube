@@ -1,0 +1,36 @@
+.side-list-links {
+  cursor: auto;
+  list-style: none;
+  margin: 20px auto;
+}
+
+.side-list-links li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 13px 20px;
+  transition: all 0.2s ease;
+  margin-bottom: 0;
+}
+
+.side-list-links li svg,
+.side-list-links li img {
+  margin-right: 15px;
+}
+
+.side-list-links li:hover {
+  background: rgba(91, 92, 116, 0.2);
+}
+
+/*************** MODE APP *************** /
+/* Light */
+
+/* Dark */
+
+.side-list-links.dark li:hover path {
+  fill: white;
+}
+
+.side-list-links.dark li:hover {
+  color: white;
+}

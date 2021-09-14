@@ -1,0 +1,33 @@
+.notification {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification:hover path {
+  opacity: 0.8;
+}
+
+.notification div {
+  width: 15px;
+  height: 15px;
+  background: var(--red);
+  position: absolute;
+  top: 8px;
+  right: 3px;
+  border-radius: 50%;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 9px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*************** MODE APP *************** /
+/* Light default color in svg */
+
+/* Dark */
+.notification.dark path {
+  fill: white;
+}

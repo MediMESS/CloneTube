@@ -1,0 +1,95 @@
+.sidebar {
+  position: fixed;
+  top: 100px;
+  overflow-y: auto;
+  width: 298px;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: all 0.2s ease;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  margin: 0;
+}
+
+.sidebar ul li {
+  border-radius: 40px;
+}
+
+.sidebar ul li:hover {
+  color: white;
+}
+
+.sidebar ul li:hover path {
+  fill: white;
+}
+
+.sidebar.dark ul li:hover {
+  background: var(--primary);
+}
+
+.sidebar.light ul li:hover {
+  background: var(--dark-light);
+}
+
+.sidebar div:last-child {
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0 20px 20px;
+}
+
+.sidebar > div:last-child span {
+  margin-right: 15px;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebar > div:last-child span:hover {
+  opacity: 0.6;
+}
+
+.sidebar > div:last-child div {
+  margin-bottom: 15px;
+}
+
+.sidebar div.signin-container {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 0 20px;
+}
+
+.sidebar div.signin-container > div {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar div.signin-container > div svg {
+  margin-left: 15px;
+}
+
+.sidebar div.signin-container > div svg path {
+  fill: var(--primary);
+}
+
+.sidebar div.signin-container p span {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.sidebar div.signin-container p span:hover {
+  opacity: 0.7;
+}

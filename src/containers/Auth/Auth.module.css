@@ -1,0 +1,39 @@
+.auth {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-light);
+}
+
+.auth.dark h1 {
+  color: white;
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 2px;
+}
+
+.authContainer > div {
+  margin-bottom: 40px;
+}
+
+.auth form button {
+  margin-top: 20px;
+}
+
+.auth form button svg {
+  margin-left: 15px;
+  transition: all 0.2s ease;
+}
+
+.auth form button svg path {
+  fill: var(--primary);
+}
+.auth form button:hover svg {
+  transform: translateX(10px);
+}

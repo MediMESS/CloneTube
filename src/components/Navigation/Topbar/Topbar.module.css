@@ -1,0 +1,163 @@
+.Topbar {
+  height: 100px;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  padding-left: 20px;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.Topbar .hamburger {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.Topbar .hamburger span {
+  display: block;
+  background: var(--dark-light);
+  height: 2px;
+}
+
+.logo-container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.logo-container img {
+  margin-right: 5px;
+  animation: rotate linear 2s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-container h1 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 37px;
+  letter-spacing: 2px;
+}
+
+.logo-container p {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  text-transform: uppercase;
+  margin-left: 11px;
+  letter-spacing: 7px;
+}
+
+.right {
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.actions > * {
+  margin-right: 30px;
+}
+.actions > div:last-child {
+  margin-right: 0;
+}
+
+.left {
+  margin-right: 50px;
+}
+
+.searchbar {
+  max-width: 632px;
+  width: 40vw;
+  max-height: 60px;
+  margin-right: 70px;
+  display: flex;
+  padding: 18px 21px;
+  border-radius: 8px;
+}
+
+.searchbar input {
+  flex-grow: 1;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  background: transparent;
+}
+
+.upload {
+  border: 1px solid var(--dark-light);
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.upload svg {
+  margin-right: 8px;
+}
+
+.upload:hover {
+  opacity: 0.7;
+}
+
+.signin {
+  background: var(--primary);
+  color: white;
+  padding: 14px 25px;
+}
+
+/*************** MODE APP *************** /
+/* Light */
+.Topbar.light .searchbar {
+  background: var(--light-offprimary);
+}
+
+.Topbar.light .searchbar input {
+  color: var(--dark-light);
+}
+
+/* Dark */
+.Topbar.dark .searchbar {
+  background: var(--dark-light);
+}
+
+.Topbar.dark .searchbar input {
+  color: white;
+}
+.Topbar.dark .searchbar input::placeholder {
+  color: white;
+}
+
+.Topbar.dark .searchbar path {
+  fill: white;
+}
+
+.Topbar.dark .upload {
+  border-color: white;
+}
+
+.Topbar.dark .upload path {
+  fill: white;
+}
+
+.Topbar.dark .hamburger span {
+  background: white;
+}

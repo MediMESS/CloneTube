@@ -1,0 +1,62 @@
+.input-group {
+  display: flex;
+  color: var(--dark-light);
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input {
+  border: 1px solid var(--dark);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  margin: 0 30px;
+  overflow: hidden;
+}
+
+.input > div {
+  border-radius: 8px;
+  background: var(--light-offprimary);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.input input {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--dark-light);
+  padding: 10px;
+}
+
+.input input::placeholder {
+  color: var(--dark-light);
+}
+
+.input-validation {
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.input-group.dark label {
+  color: white;
+}
+.input-group.dark .input {
+  border: 1px solid var(--dark-light);
+}
+.input-group.dark .input svg path {
+  fill: white;
+}
+.input-group.dark .input > div {
+  background: var(--dark-light);
+}
