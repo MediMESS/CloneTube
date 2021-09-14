@@ -8,6 +8,6 @@ To strenghten my skills as a junior front-end developper, and allow me to go fro
 
 ## Installation
 
-git clone
-npm install
+git clone<br>
+npm install<br>
 npm start
