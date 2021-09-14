@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   token: null,
   loading: false,
+  error: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -16,6 +17,7 @@ const authReducer = (state = initialState, action) => {
         token: action.token,
         authenticated: true,
         loading: false,
+        error: null,
       };
 
     case actionTypes.AUTH_START:

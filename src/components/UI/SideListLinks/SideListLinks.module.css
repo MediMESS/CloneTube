@@ -4,22 +4,26 @@
   margin: 20px auto;
 }
 
-.side-list-links li {
+.side-list-links .link {
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: 13px 20px;
   transition: all 0.2s ease;
   margin-bottom: 0;
+  text-decoration: none;
+  color: var(--dark-light);
+  transition: all 0.2s ease;
 }
 
-.side-list-links li svg,
-.side-list-links li img {
+.side-list-links .link svg,
+.side-list-links .link img {
   margin-right: 15px;
 }
 
-.side-list-links li:hover {
+.side-list-links .link:hover {
   background: rgba(91, 92, 116, 0.2);
+  color: white;
 }
 
 /*************** MODE APP *************** /
@@ -27,10 +31,10 @@
 
 /* Dark */
 
-.side-list-links.dark li:hover path {
+.side-list-links.dark .link:hover path {
   fill: white;
 }
 
-.side-list-links.dark li:hover {
+.side-list-links.dark .link:hover {
   color: white;
 }

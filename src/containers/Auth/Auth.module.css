@@ -25,9 +25,17 @@
 .auth form button {
   margin-top: 20px;
 }
+.auth form button.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.auth form button svg,
+.auth form button div {
+  margin-left: 15px;
+}
 
 .auth form button svg {
-  margin-left: 15px;
   transition: all 0.2s ease;
 }
 

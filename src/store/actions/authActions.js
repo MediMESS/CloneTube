@@ -64,15 +64,15 @@ export const checkTokenExpiration = (args) => {
             })
           );
         })
-        .catch((e) => {
+        .catch((err) => {
+          dispatch(authFail(err.message));
           dispatch(logout());
         });
-    }, args.expiresIn * 1000);
+    }, args.expiresIn);
   };
 };
 
 const authenticate = (dispatch, formData, authenticateURL) => {
-  console.log(formData);
   const authData = {
     email: formData.channel + "@clonetube.com",
     password: formData.password,
@@ -92,7 +92,8 @@ const authenticate = (dispatch, formData, authenticateURL) => {
       );
     })
     .catch((err) => {
-      dispatch(authFail(err));
+      console.log(err);
+      dispatch(authFail(err.message));
     });
 };
 

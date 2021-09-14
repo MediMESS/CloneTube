@@ -15,14 +15,15 @@ import { logout } from "./store/actions";
 class App extends Component {
   render() {
     let routes = [
-      <Route component={Auth} path="/" key="auth" />,
+      <Route component={Auth} path="/auth" exact key="auth" />,
       <Route component={Video} path="/video/:id" key="video" />,
       <Route component={Channel} path="/channel/:id" key="channel" />,
       <Route component={Search} path="/search" key="search" />,
+      <Route component={Discover} path="/" exact key="discover" />,
     ];
 
     if (this.props.authenticated) {
-      routes[0] = <Route component={Discover} path="/" key="discover" />;
+      routes.splice(1, 1);
       routes.push(<Route component={History} path="/history" key="history" />);
     }
     routes.push(<Redirect to="/" key="redirect" />);

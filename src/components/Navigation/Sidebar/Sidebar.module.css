@@ -52,6 +52,7 @@
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .sidebar > div:last-child span:hover {
@@ -71,12 +72,18 @@
 
 .sidebar div.signin-container > div {
   margin-bottom: 20px;
+}
+
+.sidebar div.signin-container > div a {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--primary);
 }
 
-.sidebar div.signin-container > div svg {
+.sidebar div.signin-container > div a svg {
   margin-left: 15px;
 }
 
@@ -84,12 +91,14 @@
   fill: var(--primary);
 }
 
-.sidebar div.signin-container p span {
+.sidebar div.signin-container p a {
   cursor: pointer;
   text-decoration: underline;
   font-weight: normal;
+  color: var(--primary);
+  transition: all 0.2s ease;
 }
 
-.sidebar div.signin-container p span:hover {
+.sidebar div.signin-container p a:hover {
   opacity: 0.7;
 }

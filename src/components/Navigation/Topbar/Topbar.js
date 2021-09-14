@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import topbarStyles from "./Topbar.module.css";
 import logoPath from "./../../../assets/logo.svg";
 import { ReactComponent as CameraIcon } from "./../../../assets/icons/topbar/camera.svg";
@@ -55,9 +57,12 @@ const Topbar = (props) => {
           {props.authenticated ? (
             <Profile mode={props.mode} logout={props.logout} />
           ) : (
-            <div className={["btn-signin", topbarStyles.signin].join(" ")}>
+            <Link
+              to="/auth"
+              className={["btn-signin", topbarStyles.signin].join(" ")}
+            >
               Sign In
-            </div>
+            </Link>
           )}
         </div>
       </div>

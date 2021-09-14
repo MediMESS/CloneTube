@@ -6,6 +6,7 @@ import { ReactComponent as PasswordIcon } from "./../../assets/auth/form/channel
 import { ReactComponent as TitleIcon } from "./../../assets/auth/title icon.svg";
 import { ReactComponent as ChannelIcon } from "./../../assets/auth/form/avatar_icon.svg";
 import { signin, signup } from "./../../store/actions";
+import SpinnerBtn from "../../components/UI/Spinner/SpinnerBtn";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { ReactComponent as ArrowForwardIcon } from "./../../assets/icons/links/arrow_forward.svg";
@@ -54,9 +55,7 @@ class Auth extends Component {
         type: "password",
       },
     ];
-
     let titleMode = "In";
-
     let redirectText = "You don't have an account yet,";
     let initialValues = {
       channel: "",
@@ -95,6 +94,7 @@ class Auth extends Component {
                   form={form}
                   errors={errors}
                   touched={touched}
+                  disabled={this.props.loading}
                 />
                 <p>
                   {redirectText}{" "}
@@ -109,9 +109,12 @@ class Auth extends Component {
                     Sign {titleMode === "In" ? "Up" : "In"}
                   </span>
                 </p>
-                <button type="submit" className="btn-signin flex">
+                <button
+                  type="submit"
+                  className={["btn-signin flex", authStyles.disabled].join(" ")}
+                >
                   Sign {titleMode}
-                  <ArrowForwardIcon />
+                  {this.props.loading ? <SpinnerBtn /> : <ArrowForwardIcon />}
                 </button>
               </Form>
             )}
@@ -125,6 +128,8 @@ class Auth extends Component {
 const mapStateToProps = (state) => {
   return {
     mode: state.app.mode,
+    error: state.auth.error,
+    loading: state.auth.loading,
   };
 };
 

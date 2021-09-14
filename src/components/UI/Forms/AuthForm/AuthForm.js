@@ -22,6 +22,7 @@ const AuthForm = (props) => {
               <input.icon />
             </div>
             <Field
+              disabled={props.disabled}
               name={input.name}
               type={input.type}
               className="layout-links"

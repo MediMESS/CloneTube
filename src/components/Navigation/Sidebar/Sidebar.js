@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import sidebarStyles from "./Sidebar.module.css";
 import SideListLinks from "./../../UI/SideListLinks/SideListLinks";
 import { ReactComponent as SearchIcon } from "./../../../assets/icons/topbar/search.svg";
@@ -23,16 +24,34 @@ import figmaPath from "./../../../assets/channels/Figma.png";
 const Sidebar = (props) => {
   const links = [
     [
-      { icon: <SearchIcon />, name: "Discover" },
-      { icon: <TrendingIcon />, name: "Trending" },
-      { icon: <FollowingIcon />, name: "Following" },
+      { icon: <SearchIcon />, name: "Discover", to: "/" },
+      { icon: <TrendingIcon />, name: "Trending", to: "/trending" },
+      { icon: <FollowingIcon />, name: "Following", to: "/following" },
     ],
     [
-      { icon: <FavouriteIcon />, name: "Favourite" },
-      { icon: <StacksIcon />, name: "My Videos" },
-      { icon: <HistoryIcon />, name: "History" },
+      {
+        icon: <FavouriteIcon />,
+        name: "Favourite",
+        to: "/favourite",
+      },
+      {
+        icon: <StacksIcon />,
+        name: "My Videos",
+        to: "/channel",
+      },
+      {
+        icon: <HistoryIcon />,
+        name: "History",
+        to: "history",
+      },
     ],
-    [{ icon: <PlaylistIcon />, name: "Create Playlist" }],
+    [
+      {
+        icon: <PlaylistIcon />,
+        name: "Create Playlist",
+        to: "/auth",
+      },
+    ],
     [
       {
         icon: <img src={freeCodeCampPath} alt="channel" />,
@@ -53,7 +72,7 @@ const Sidebar = (props) => {
       { icon: <ArrowDownIcon />, name: "Show 45 More" },
     ],
     [
-      { icon: <SettingsIcon />, name: "Settings" },
+      { icon: <SettingsIcon />, name: "Settings", to: "/settings" },
       { icon: <ReportHistoryIcon />, name: "Report History" },
       { icon: <HelpIcon />, name: "Help" },
       { icon: <SendFeedbackIcon />, name: "Send Feedback" },
@@ -95,11 +114,13 @@ const Sidebar = (props) => {
         ) : (
           <div className={sidebarStyles["signin-container"]}>
             <div className="btn-signin">
-              Sign In <ArrowForwardIcon />
+              <Link to="/auth">
+                Sign In <ArrowForwardIcon />
+              </Link>
             </div>
             <p>
               Subscribe to the content that you love, Join the community by{" "}
-              <span className="primary">Sign In</span>
+              <Link to="/auth">Sign In</Link>
             </p>
           </div>
         )}
