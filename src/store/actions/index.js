@@ -1,2 +1,2 @@
 export { setMode } from "./appActions";
-export { signin, signup, logout } from "./authActions";
+export { signin, signup, logout, reset } from "./authActions";

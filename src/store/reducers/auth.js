@@ -26,6 +26,12 @@ const authReducer = (state = initialState, action) => {
         loading: true,
       };
 
+    case actionTypes.RESET:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+      };
     case actionTypes.AUTH_FAIL:
       return {
         ...state,

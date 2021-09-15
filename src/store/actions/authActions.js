@@ -31,6 +31,12 @@ const authFail = (error) => {
   };
 };
 
+export const reset = () => {
+  return {
+    type: actionTypes.RESET,
+  };
+};
+
 export const logout = () => {
   return {
     type: actionTypes.LOGOUT,
@@ -65,10 +71,10 @@ export const checkTokenExpiration = (args) => {
           );
         })
         .catch((err) => {
-          dispatch(authFail(err.message));
+          dispatch(authFail(err.response.data.error.message));
           dispatch(logout());
         });
-    }, args.expiresIn);
+    }, args.expiresIn * 1000);
   };
 };
 
@@ -92,8 +98,7 @@ const authenticate = (dispatch, formData, authenticateURL) => {
       );
     })
     .catch((err) => {
-      console.log(err);
-      dispatch(authFail(err.message));
+      dispatch(authFail(err.response.data.error.message));
     });
 };
 

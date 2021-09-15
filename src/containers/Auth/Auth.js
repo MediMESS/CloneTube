@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { signin, signup, reset } from "./../../store/actions";
+import AuthErrorHandler from "../HOC/ErrorHandler/AuthErrorHandler/AuthErrorHandler";
 import authStyles from "./Auth.module.css";
 import AuthForm from "../../components/UI/Forms/AuthForm/AuthForm";
 import { ReactComponent as PasswordIcon } from "./../../assets/auth/form/channel_icon.svg";
 import { ReactComponent as TitleIcon } from "./../../assets/auth/title icon.svg";
 import { ReactComponent as ChannelIcon } from "./../../assets/auth/form/avatar_icon.svg";
-import { signin, signup } from "./../../store/actions";
 import SpinnerBtn from "../../components/UI/Spinner/SpinnerBtn";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -103,6 +104,7 @@ class Auth extends Component {
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                     onClick={() => {
                       resetForm();
+                      this.props.resetLoading();
                       this.setAuthMode();
                     }}
                   >
@@ -111,7 +113,10 @@ class Auth extends Component {
                 </p>
                 <button
                   type="submit"
-                  className={["btn-signin flex", authStyles.disabled].join(" ")}
+                  className={[
+                    "btn-signin flex",
+                    this.props.loading && authStyles.disabled,
+                  ].join(" ")}
                 >
                   Sign {titleMode}
                   {this.props.loading ? <SpinnerBtn /> : <ArrowForwardIcon />}
@@ -137,6 +142,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSignin: (values) => dispatch(signin(values)),
     onSignup: (values) => dispatch(signup(values)),
+    resetLoading: () => dispatch(reset()),
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AuthErrorHandler(Auth));

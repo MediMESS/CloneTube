@@ -17,12 +17,16 @@ const AuthForm = (props) => {
           ].join(" ")}
         >
           <label htmlFor={input.name}>{input.label}</label>
-          <div className={authFormStyles.input}>
+          <div
+            className={[
+              authFormStyles.input,
+              props.disabled && authFormStyles.disabled,
+            ].join(" ")}
+          >
             <div>
               <input.icon />
             </div>
             <Field
-              disabled={props.disabled}
               name={input.name}
               type={input.type}
               className="layout-links"

@@ -7,3 +7,4 @@ export const AUTH_FAIL = "AUTH_FAIL";
 export const AUTH_START = "AUTH_START";
 export const LOGOUT = "LOGOUT";
 export const REFRESH_TOKEN = "REFRESH_TOKEN";
+export const RESET = "RESET";
