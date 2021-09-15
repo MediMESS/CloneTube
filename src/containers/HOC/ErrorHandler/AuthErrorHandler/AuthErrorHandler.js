@@ -1,12 +1,36 @@
 import React, { Component } from "react";
 import Modal from "../../../../components/UI/Modal/Modal";
+import oopsPicturePath from "./../../../../assets/modal/oops.png";
 
 const AuthErrorHandler = (AuthComponent) => {
   return class extends Component {
+    constructor(props) {
+      super(props);
+    }
+
+    closeModal = () => {
+      console.log("Close Modal");
+      this.props.resetAuth();
+    };
     render() {
+      const msg = {
+        INVALID_PASSWORD: "Incorrect Email or Password",
+        EMAIL_EXISTS: "This Channel already exist",
+        EMAIL_NOT_FOUND: "Incorrect Email or Password",
+      };
       return (
         <div>
-          {this.props.error && <Modal />}
+          <Modal show={!!this.props.error} close={this.closeModal}>
+            <h1>Ooops, Something Wrong</h1>
+            <div>
+              <img src={oopsPicturePath} alt="oopsImage" />
+            </div>
+            <p>
+              {msg[this.props.error]
+                ? msg[this.props.error]
+                : "Please try again, later"}
+            </p>
+          </Modal>
           <AuthComponent {...this.props} />
         </div>
       );

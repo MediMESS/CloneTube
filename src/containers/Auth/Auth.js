@@ -104,7 +104,7 @@ class Auth extends Component {
                     style={{ textDecoration: "underline", cursor: "pointer" }}
                     onClick={() => {
                       resetForm();
-                      this.props.resetLoading();
+                      this.props.resetAuth();
                       this.setAuthMode();
                     }}
                   >
@@ -142,7 +142,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSignin: (values) => dispatch(signin(values)),
     onSignup: (values) => dispatch(signup(values)),
-    resetLoading: () => dispatch(reset()),
+    resetAuth: () => dispatch(reset()),
   };
 };
 export default connect(
