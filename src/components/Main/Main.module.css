@@ -1,9 +1,8 @@
 .main {
-  position: fixed;
+  position: absolute;
   left: 298px;
   right: 0;
   min-height: 100%;
   top: 100px;
-  z-index: 100;
   transition: all 0.2s ease;
 }

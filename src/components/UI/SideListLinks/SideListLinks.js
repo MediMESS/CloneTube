@@ -13,7 +13,7 @@ const SideListLinks = (props) => {
       ].join(" ")}
     >
       {props.links.map((link) => {
-        if (props.reverse)
+        if (props.reverse) {
           return (
             <li key={link.name}>
               <Link
@@ -26,7 +26,7 @@ const SideListLinks = (props) => {
               </Link>
             </li>
           );
-        else
+        } else {
           return (
             <li key={link.name}>
               <Link
@@ -39,6 +39,7 @@ const SideListLinks = (props) => {
               </Link>
             </li>
           );
+        }
       })}
     </ul>
   );

@@ -23,7 +23,7 @@ class App extends Component {
     ];
 
     if (this.props.authenticated) {
-      routes.splice(1, 1);
+      routes.shift();
       routes.push(<Route component={History} path="/history" key="history" />);
     }
     routes.push(<Redirect to="/" key="redirect" />);

@@ -1,7 +1,6 @@
 .Topbar {
   height: 100px;
   position: fixed;
-  z-index: 100;
   left: 0;
   padding-left: 20px;
   right: 0;

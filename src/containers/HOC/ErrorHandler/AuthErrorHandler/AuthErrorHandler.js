@@ -9,9 +9,9 @@ const AuthErrorHandler = (AuthComponent) => {
     }
 
     closeModal = () => {
-      console.log("Close Modal");
       this.props.resetAuth();
     };
+
     render() {
       const msg = {
         INVALID_PASSWORD: "Incorrect Email or Password",

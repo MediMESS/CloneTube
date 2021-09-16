@@ -5,18 +5,20 @@ import { CSSTransition } from "react-transition-group";
 
 const Modal = (props) => {
   return (
-    <CSSTransition
-      in={props.show}
-      timeout={300}
-      classNames="fade-in"
-      mountOnEnter
-      unmountOnExit
-    >
-      <div>
-        <Backdrop onClick={props.close} />
-        <div className={modalStyles.modal}>{props.children}</div>
-      </div>
-    </CSSTransition>
+    <React.Fragment>
+      <Backdrop onClick={props.close} show={props.show} />
+      <CSSTransition
+        in={props.show}
+        timeout={300}
+        classNames="fade-in"
+        mountOnEnter
+        unmountOnExit
+      >
+        <div>
+          <div className={modalStyles.modal}>{props.children}</div>
+        </div>
+      </CSSTransition>
+    </React.Fragment>
   );
 };
 
