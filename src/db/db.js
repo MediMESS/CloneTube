@@ -21,4 +21,5 @@ const firebaseConfig = {
 const db = initializeApp(firebaseConfig);
 const analytics = getAnalytics(db);
 
+export const YoutubeAPI_Key = "AIzaSyD62C2WDrP9CQSSqvMGonNCawhexHMiFzk";
 export default db;
