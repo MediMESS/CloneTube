@@ -4,10 +4,6 @@ import oopsPicturePath from "./../../../../assets/modal/oops.png";
 
 const AuthErrorHandler = (AuthComponent) => {
   return class extends Component {
-    constructor(props) {
-      super(props);
-    }
-
     closeModal = () => {
       this.props.resetAuth();
     };

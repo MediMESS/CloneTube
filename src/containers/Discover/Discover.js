@@ -1,15 +1,38 @@
-import React from "react";
-import Tag from "../../components/UI/Tag/Tag";
+import React, { Component } from "react";
+import VideoCategory from "../../components/UI/VideoCategory/VideoCategory";
+import discoverStyles from "./Discover.module.css";
+import { getVideosByCategory } from "./../../axios/youtube-requests";
 
-const Discover = () => {
-  return (
-    <div>
-      <hr />
-      <h1>Tags</h1>
-      <hr />
-      <div>Discover</div>
-    </div>
-  );
-};
+class Discover extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tags: [],
+      videos: [],
+    };
+  }
+
+  componentDidMount() {
+    getVideosByCategory(1)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
+  render() {
+    return (
+      <div>
+        <div className={discoverStyles.tags}>
+          <hr />
+          <div>
+            <VideoCategory />
+          </div>
+          <hr />
+        </div>
+        <div>Discover</div>
+      </div>
+    );
+  }
+}
 
 export default Discover;

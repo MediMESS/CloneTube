@@ -23,14 +23,14 @@
 
 .side-list-links .link:hover {
   background: rgba(91, 92, 116, 0.2);
-  color: var(--dark);
+  color: white;
 }
 
 /*************** MODE APP *************** /
 /* Light */
 
 .side-list-links.light .link:hover path {
-  fill: var(--dark);
+  fill: white;
 }
 
 /* Dark */
