@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import VideoCategory from "../../components/UI/VideoCategory/VideoCategory";
 import discoverStyles from "./Discover.module.css";
 import { getVideosByCategory } from "./../../axios/youtube-requests";
+import Test from "../../components/UI/VideoCategory/test";
 
 class Discover extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Discover extends Component {
           <hr />
           <div>
             <VideoCategory />
+            <Test />
           </div>
           <hr />
         </div>
